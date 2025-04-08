@@ -1,0 +1,255 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e6eaf0;
+   overflow-y: auto;
+}
+
+.sidebar {
+    position: absolute;
+    top: 67px;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #282c34;
+    color: #fff;
+    transition: left 0.3s ease;
+    z-index: 1050;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar .close-btn {
+    color: #fff;
+    position: absolute;
+    font-size: 20px;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.sidebar a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 15px 20px;
+    border-radius: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar a:hover {
+    background-color: #495057;
+}
+
+#toggle-sidebar {
+    font-size: 20px;
+    color: black;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#toggle-sidebar:hover {
+    background-color: #c4c2c2de;
+}
+
+#navLogout, #navNotif {
+    padding: 8px 15px;
+    font-size: 18px;
+    background-color: #bbc4cf;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#nav-icon:hover {
+    background-color: #a0a7af;
+}
+
+.content {
+    padding: 20px;
+    margin-left: 0;
+    transition: margin-left 0.3s ease;
+    overflow-y: auto;
+}
+
+.title-text {
+    font-size: 25px;
+}
+
+.title-text span {
+    color: rgb(71, 163, 221);
+}
+
+#nav {
+    padding: 8px 5px;
+    background-color: #f8f9fa;
+}
+
+.card-title {
+    color: #007bff;
+}
+
+.card-body {
+    height: 8rem;
+    scrollbar-width: thin;
+    scrollbar-color: #007bff #f1f1f1;
+}
+
+.appointment-details i, .appointment i {
+    color: #007bff;
+}
+
+.recent {
+    border-bottom: 1px solid black;
+}
+
+/* Profiles and Notification Bars */
+#notifBar {
+    width: 200px;
+    height: 200px;
+    background-color: #007bff;
+    position: absolute;
+    z-index: 999;
+    top: 60px;
+   right: 20px;
+    transition: 0.3s ease-in;
+    display: none;
+}
+
+ #notifBar.show {
+    display: block;
+}
+
+
+
+
+
+/* Dropdown Sub-menu */
+.sub-btn {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+}
+
+.sub-btn .dropdown {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    transition: transform 0.1s ease-in;
+}
+
+.sub-menu {
+    background: #23232b;
+    display: none;
+    border-radius: 0 0 5px 5px;
+   
+}
+
+.sub-menu a {
+    padding: 10px 9px 10px 20px;
+    margin: 0 10px;
+    text-decoration: none;
+    color: rgb(235, 225, 225);
+    display: block;
+}
+
+.sub-menu a:hover {
+    background-color: #495057;
+    border-radius: 10px;
+}
+
+.rotate {
+    transform: rotate(90deg);
+}
+
+/* Responsive Styles */
+@media (min-width: 1124px) {
+    .sidebar.active {
+        left: 0;
+    }
+    .content.shifted {
+        margin-left: 250px;
+    }
+}
+
+@media (max-width: 1124px) {
+    .sidebar {
+        width: 250px;
+        left: -100%;
+    }
+    .sidebar.active {
+        left: 0;
+    }
+    .content.shifted {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .table {
+        border: 1px solid transparent;
+        box-shadow: none;
+    }
+    .table thead {
+        display: none;
+    }
+    .table tbody tr {
+        border-bottom: 65px solid #F8F8F8;
+        margin-top: 10px;
+    }
+    .table tbody tr td {
+        display: block;
+        text-align: right;
+        padding: 10px;
+        border-bottom: 1px solid black;
+        font-size: 19px;
+    }
+    .table tbody tr td:before {
+        content: attr(data-label);
+        float: left;
+        font-size: 15px;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+}
+
+.table {
+    border: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.table thead {
+    background: #F0F0F0;
+}
+
+.table thead tr th {
+    text-transform: uppercase;
+    text-align: left;
+    font-size: 14px;
+}
+
+.table tbody {
+    background: #fff;
+}
+
+.table tbody tr {
+    border-top: 1px solid #e5e5e5;
+}
+
+.table tbody tr td {
+    padding: 10px;
+    font-size: 16px;
+}
